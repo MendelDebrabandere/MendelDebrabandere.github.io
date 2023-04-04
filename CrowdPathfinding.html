@@ -23,7 +23,7 @@
         return response.text();
       })
       .then(markdown => {
-        // Insert the raw Markdown content into the element with the ID 'markdown-content'
+        // Insert the raw Maarkdown content into the element with the ID 'markdown-content'
         document.getElementById('markdown-content').textContent = markdown;
       })
       .catch(error => {
