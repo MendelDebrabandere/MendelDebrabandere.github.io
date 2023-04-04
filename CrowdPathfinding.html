@@ -14,8 +14,8 @@
 <body>
   <pre id="markdown-content"></pre>
   <script>
-    // Fetch the Markdown file
-    fetch('README.md')
+    // Fetch the Markdown file from another repository
+    fetch('https://raw.githubusercontent.com/MendelDebrabandere/GPP-Exam-research-topic/main/README.md')
       .then(response => {
         if (!response.ok) {
           throw new Error(`Error fetching the Markdown file: ${response.statusText}`);
@@ -23,7 +23,7 @@
         return response.text();
       })
       .then(markdown => {
-        // Insert the raw Maarkdown content into the element with the ID 'markdown-content'
+        // Insert the raw Markdown content into the element with the ID 'markdown-content'
         document.getElementById('markdown-content').textContent = markdown;
       })
       .catch(error => {
