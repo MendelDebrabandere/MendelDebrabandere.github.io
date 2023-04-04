@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Markdown to HTML Example</title>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <title>Raw Markdown Display</title>
   <style>
-    /* Add any custom styles you want for your rendered Markdown content here */
+    body {
+      font-family: monospace;
+      white-space: pre;
+    }
   </style>
 </head>
 <body>
-  <div id="markdown-content"></div>
-  
+  <pre id="markdown-content"></pre>
   <script>
     // Fetch the Markdown file
-    fetch('README.md')
+    fetch('READE.md')
       .then(response => {
         if (!response.ok) {
           throw new Error(`Error fetching the Markdown file: ${response.statusText}`);
@@ -22,11 +23,8 @@
         return response.text();
       })
       .then(markdown => {
-        // Convert the Markdown to HTML using the `marked` library
-        const html = marked(markdown);
-
-        // Insert the HTML into the element with the ID 'markdown-content'
-        document.getElementById('markdown-content').innerHTML = html;
+        // Insert the raw Markdown content into the element with the ID 'markdown-content'
+        document.getElementById('markdown-content').textContent = markdown;
       })
       .catch(error => {
         console.error('Error processing the Markdown file:', error);
