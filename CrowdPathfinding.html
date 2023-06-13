@@ -100,8 +100,11 @@
     }
 
 
-    // Fetch the Markdown file from a specific GitHub repository
-    const repoUrl = 'https://raw.githubusercontent.com/MendelDebrabandere/GPP-Exam-research-topic/main/README.md';
+    // Get the value of the 'repoUrl' parameter from the URL query parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const repoUrl = urlParams.get('repoUrl');
+
+    // Fetch and display the Markdown from the specified repository URL
     fetchMarkdownFromRepo(repoUrl);
   </script>
 </body>
