@@ -78,7 +78,9 @@
   <div id="markdown-content"></div>
   <script>
     // Fetch the Markdown file from another repository
-    fetch('https://raw.githubusercontent.com/MendelDebrabandere/GPP-Exam-research-topic/main/README.md')
+    function fetchMarkdownFromRepo(repoUrl)
+    {
+      fetch(repoUrl)
       .then(response => {
         if (!response.ok) {
           throw new Error(`Error fetching the Markdown file: ${response.statusText}`);
@@ -95,6 +97,12 @@
       .catch(error => {
         console.error('Error processing the Markdown file:', error);
       });
+    }
+
+
+    // Fetch the Markdown file from a specific GitHub repository
+    const repoUrl = 'https://raw.githubusercontent.com/MendelDebrabandere/GPP-Exam-research-topic/main/README.md';
+    fetchMarkdownFromRepo(repoUrl);
   </script>
 </body>
 </html>
