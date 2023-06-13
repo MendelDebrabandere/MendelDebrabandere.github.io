@@ -103,7 +103,11 @@
     // Get the value of the 'repoUrl' parameter from the URL query parameters
     const urlParams = new URLSearchParams(window.location.search);
     const repoUrl = urlParams.get('repoUrl');
+    const title = urlParams.get('title');
 
+    // Set the title of the page
+    document.title = title;
+    
     // Fetch and display the Markdown from the specified repository URL
     fetchMarkdownFromRepo(repoUrl);
   </script>
