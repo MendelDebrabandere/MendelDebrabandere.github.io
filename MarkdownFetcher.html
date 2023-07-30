@@ -109,11 +109,13 @@
     // Set the title of the page
     document.title = title;
     
+        // Display the repoUrl value in the paragraph
+        document.querySelector("p").innerText = `Github repo: ${repoUrl}`;
+
+        
     // Fetch and display the Markdown from the specified repository URL
     fetchMarkdownFromRepo(repoUrl);
 
-    // Display the repoUrl value in the paragraph
-    document.querySelector("p").innerText = `Github repo: ${repoUrl}`;
   </script>
 
   <p>Github repo: repoUrl</p>
