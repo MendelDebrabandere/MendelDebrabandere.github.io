@@ -1,0 +1,25 @@
+/* Write your code here: */
+
+/* multiple things */
+h1, h2 {
+    color: blueviolet;
+}
+
+/* direct child */
+.box > .done {
+    color: firebrick;
+}
+
+/* all children and grandchildren */
+.box li {
+    color: seagreen;
+}
+
+/* matches both of these */
+li.done {
+    color: red;
+}
+
+ul > p.done {
+    color: blueviolet;
+}
